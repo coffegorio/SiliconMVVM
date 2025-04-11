@@ -16,20 +16,28 @@ struct GreetingsView: View {
             Color("BackgroundColor")
                 .ignoresSafeArea()
             
-            VStack {
-                Text("Это тест вьюхи, лалала тралала траллалеро траллала")
+            FloatingCirclesBackground(count: 8)
+            
+            VStack(alignment: .leading, spacing: 20) {
+                
+                Spacer()
+                
+                Text("Silicon")
+                    .font(.title)
+                    .fontWeight(.medium)
                     .foregroundStyle(Color("TextColor"))
                 
-                Button {
+                Text("Создавай, презентуй, вдохновляй - где бы ты ни был!")
+                    .foregroundStyle(Color("TextColor"))
+                
+                DefaultButton(action: {
                     viewModel.showSignIn()
-                } label: {
-                    Text("Перейти к экрану")
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 50)
-                        .foregroundStyle(Color("BackgroundColor"))
-                        .background(Color("TextColor"))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                }
+                }, isFill: true, title: "Войти", leftsideImage: Image(systemName: "person.fill"))
+                
+                DefaultButton(action: {
+                    //
+                }, isFill: false, title: "Пропустить", leftsideImage: Image(systemName: "person.badge.shield.exclamationmark"))
+                
             }
             .padding(30)
         }

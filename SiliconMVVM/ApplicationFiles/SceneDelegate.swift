@@ -16,6 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        UINavigationBar.appearance().tintColor = UIColor(named: "TextColor")
+        
         window = UIWindow(windowScene: windowScene)
         let navigationController = UINavigationController()
         router = PreviewRouter(navigationController: navigationController)

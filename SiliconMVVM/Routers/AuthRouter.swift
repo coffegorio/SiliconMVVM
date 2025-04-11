@@ -19,7 +19,7 @@ class AuthRouter: DefaultRouter {
     func showSignIn() {
         let viewModel = SignInViewModel(router: self)
         let signInView = SignInView(viewModel: viewModel)
-        push(signInView, animated: true, isNavigationBarHidden: false, title: "Вход", parentViewShouldHideNavBar: true)
+        push(signInView, animated: true, isNavigationBarHidden: true, title: "Вход")
     }
     
     func showSignUp() {

@@ -14,4 +14,9 @@ class SignInViewModel: NavigationBarControllable {
     init(router: AuthRouter? = nil) {
         self.router = router
     }
+    
+    func goBack() {
+        self.router?.pop(animated: true)
+    }
+    
 }
