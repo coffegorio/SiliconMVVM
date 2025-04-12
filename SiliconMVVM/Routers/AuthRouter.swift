@@ -13,19 +13,19 @@ class AuthRouter: DefaultRouter {
     func showGreetings() {
         let viewModel = GreetingsViewModel(router: self)
         let greetingsView = GreetingsView(viewModel: viewModel)
-        push(greetingsView, animated: true, isNavigationBarHidden: true)
+        push(greetingsView, animated: true, isNavigationBarHidden: true, enableSwipeBack: true)
     }
     
     func showSignIn() {
         let viewModel = SignInViewModel(router: self)
         let signInView = SignInView(viewModel: viewModel)
-        push(signInView, animated: true, isNavigationBarHidden: true, title: "Вход")
+        push(signInView, animated: true, isNavigationBarHidden: true, title: "Вход", enableSwipeBack: true)
     }
     
     func showSignUp() {
-//        let viewModel = SignUpViewModel(router: self)
-//        let signUpView = SignUpView(viewModel: viewModel)
-//        push(signUpView, animated: true, isNavigationBarHidden: false, title: "Регистрация")
+        let viewModel = LocalSignUpViewModel(router: self)
+        let localSignUpView = LocalSignUpView(viewModel: viewModel)
+        push(localSignUpView, animated: true, isNavigationBarHidden: true, enableSwipeBack: false)
     }
 
     func toggleNavigationBar(hidden: Bool, animated: Bool = true) {

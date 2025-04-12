@@ -11,6 +11,7 @@ class PreviewRouter: DefaultRouter {
     
     func start() {
         // тут в будущем я добавлю проверку - если пользователь авторизован, его будет кидать на MainRouter, если нет, на AuthRouter
+        showPreview()
     }
     
     func showPreview() {
@@ -19,5 +20,10 @@ class PreviewRouter: DefaultRouter {
         previewView.viewModel = viewModel
         navigationController?.pushViewController(previewView, animated: true)
         setNavigationBarHidden(true, animated: false)
+    }
+    
+    func showMainFlow() {
+        let mainRouter = MainRouter(navigationController: navigationController)
+        mainRouter.startMainFlow()
     }
 }

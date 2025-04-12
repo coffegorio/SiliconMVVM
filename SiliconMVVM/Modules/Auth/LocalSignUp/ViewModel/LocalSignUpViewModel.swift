@@ -1,14 +1,13 @@
 //
-//  SignInViewModel.swift
+//  LocalSignUpViewModel.swift
 //  SiliconMVVM
 //
-//  Created by Егорио on 11.04.2025.
+//  Created by Егорио on 12.04.2025.
 //
 
 import Foundation
 
-class SignInViewModel: NavigationBarControllable {
-    
+class LocalSignUpViewModel: NavigationBarControllable {
     weak var router: AuthRouter?
     
     init(router: AuthRouter? = nil) {

@@ -18,4 +18,8 @@ class GreetingsViewModel: NavigationBarControllable {
     func showSignIn() {
         self.router?.showSignIn()
     }
+    
+    func showLocalSignUp() {
+        self.router?.showSignUp()
+    }
 }
